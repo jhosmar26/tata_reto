@@ -43,7 +43,7 @@ export default {
   methods: {
     login() {
       if(this.validateCredentials()) {
-        this.$router.push("/tareas")
+        this.$router.push("/tasks")
       }
     },
     validateCredentials() {
