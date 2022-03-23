@@ -11,9 +11,13 @@
           <!-- </label> -->
           <ul>
             <li v-for="tarea, i in tasks" :key="i">
-              <input type="checkbox" :value="i" v-model="checked">
-              {{tarea}}
-              <input v-if="checked.indexOf(i) === -1" type="button" @click="() => deleteTask(i)" value="x">
+              <label class="flex items-center max-w-sm">
+                <input type="checkbox" :value="i" v-model="checked">
+                {{tarea}}
+                <button class="relative inline-block w-5 h-5 bg-blue-500 hover:bg-blue-700 text-white rounded-full ml-auto" v-if="checked.indexOf(i) === -1" @click="() => deleteTask(i)">
+                  <span class="block -mt-1 leading-none">x</span>
+                </button>
+              </label>
             </li>
           </ul>
         </div>
